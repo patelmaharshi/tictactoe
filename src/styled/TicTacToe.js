@@ -39,6 +39,7 @@ export const Squares = ({
 	gameOver,
 	yourTurn,
 	ownMark,
+	otherMark,
 	move
 }) => {
 	let squares = coordinates.map( (position, index) => {
@@ -67,6 +68,7 @@ export const Squares = ({
 						let index = event.target.index
 						makeMove(index, ownMark)
 					}}
+					
 				/>
 			)
 	})

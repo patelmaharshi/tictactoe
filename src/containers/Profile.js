@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Container, Name, GameListHeader, GameList, GameRecord, Column, ColumnLabels} from '../styled/Profile'
+import Relay from 'react-relay'
 
 class Profile extends Component {
 
@@ -9,17 +10,23 @@ class Profile extends Component {
       games: [
         {
           winner: true,
-          createdAt: '12/25/2016',
+          guessed: true,
+          correctly: true,
+          createdAt: '07/28/2018',
           id: '0001'
         },
         {
           winner: true,
-          createdAt: '12/26/2016',
+          guessed: false,
+          correctly: false,
+          createdAt: '07/28/2018',
           id: '0002'
         },
         {
-          winner: true,
-          createdAt: '12/27/2016',
+          winner: false,
+          guessed: true,
+          correctly: true,
+          createdAt: '07/29/2018',
           id: '0003'
         },
       ]
@@ -37,10 +44,10 @@ class Profile extends Component {
             {(game.winner) ? 'Won!' : "Didn't win"}
           </Column>
           <Column>
-            "ROBOT"
+            {(game.guessed) ? 'Robot!' : "Human"}
           </Column>
           <Column>
-            "No"
+            {(game.correctly) ? 'Yes!' : "No"}
           </Column>
           <Column>
             {game.createdAt}
@@ -82,4 +89,16 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+export default Relay.createContainer(
+  Profile, {
+    fragments: {
+      viewer: () => Relay.QL`
+        fragment on Viewer {
+          user {
+            id
+          }
+        }
+      `,
+    }
+  }
+)
