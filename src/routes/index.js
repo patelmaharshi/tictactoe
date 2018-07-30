@@ -3,6 +3,7 @@ import {Route, IndexRoute} from 'react-router'
 import Template from '../containers/Template'
 import TicTacToe from '../containers/TicTacToe'
 import Profile from '../containers/Profile'
+import games from '../containers/games'
 import Relay from 'react-relay'
 import auth from '../utils/auth'
 
@@ -25,6 +26,11 @@ const createRoutes = () => {
       <Route
         path={'/profile'}
         component={Profile}
+        queries={ViewerQueries}
+      />
+      <Route
+        path={'/games'}
+        component={games}
         queries={ViewerQueries}
       />
     </Route>

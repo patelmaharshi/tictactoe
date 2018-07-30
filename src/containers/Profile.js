@@ -29,6 +29,20 @@ class Profile extends Component {
           createdAt: '07/29/2018',
           id: '0003'
         },
+        {
+          winner: true,
+          guessed: true,
+          correctly: false,
+          createdAt: '07/30/2018',
+          id: '0004'
+        },
+        {
+          winner: true,
+          guessed: true,
+          correctly: true,
+          createdAt: '07/30/2018',
+          id: '0005'
+        },
       ]
     }
   }

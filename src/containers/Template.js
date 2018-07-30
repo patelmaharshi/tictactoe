@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import NavDrawer from '../components/NavDrawer'
+import HomeDrawer from '../components/HomeDrawer'
+//import NavDrawer from '../components/NavDrawer'
 import {Header, Main} from '../styled/Template'
 import Relay from 'react-relay'
 
@@ -13,12 +14,12 @@ class Template extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <NavDrawer
+          <HomeDrawer
             auth={this.props.route.auth}
             authenticated={this.props.viewer.user}
           />
           <Header>
-            TicTacTuring
+            GAMES
           </Header>
           <Main>
             {this.props.children}

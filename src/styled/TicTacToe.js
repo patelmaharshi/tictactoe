@@ -3,7 +3,7 @@ import {Layer, Line, Text} from 'react-konva'
 
 export const Board = ({unit, size, rows}) => {
 	let grid = []
-	let stroke = 'grey'
+	let stroke = 'black'
 	let strokeWidth = 10
 	for (let i = 1; i < rows; i++) {
 		let position = unit * i

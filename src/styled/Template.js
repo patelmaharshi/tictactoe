@@ -5,7 +5,13 @@ import {media} from '../utils/media'
 export const Header = styled.header`
 	text-align: center;
 	font-size: 2em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Georgia', serif;
+	//background-color: Red;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	font-weight: bold;
+	font-style: oblique;
+	color: black;
 `
 
 export const Container = styled.div`
@@ -18,6 +24,7 @@ export const Container = styled.div`
 	${media.handheld`
 		width: 100%;
 	`}
+	background-color: #EBF5FB;
 	
 `
 

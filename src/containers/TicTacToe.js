@@ -87,6 +87,12 @@ class TicTacToe extends Component {
       }
     })
     let aiMove = openSquares[this.random(0, openSquares.length)]
+    for(let i=0;i<openSquares.length;i++){
+      if(openSquares[i]===4){
+        console.log("Hello")
+        aiMove = openSquares[i]
+      }
+    }
     setTimeout(()=>{
       this.move(aiMove,otherMark)
     }, 1000)
